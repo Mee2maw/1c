@@ -1,390 +1,622 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FreshBites • welcome</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>FreshBites Kenya · home of classic cakes</title>
     <style>
-        /* ----- RESET & GLOBAL ----- */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        :root {
+            --kenya-coffee: #6f4e37;      /* rich brown */
+            --kenya-sunset: #d44d2e;       /* warm orange-red */
+            --kenya-cream: #fef7e9;        /* off-white */
+            --kenya-earth: #9b7b5b;         /* terracotta undertone */
+            --kenya-tea: #317b5a;           /* lush green */
+            --gold: #c4a23b;
+            --font-main: 'Inter', 'Segoe UI', system-ui, sans-serif;
+        }
+
         body {
-            background: linear-gradient(145deg, #f6f9fc 0%, #e6f0f5 100%);
-            font-family: 'Inter', 'Segoe UI', Roboto, system-ui, sans-serif;
+            background-color: #faf1e6;
+            background-image: linear-gradient(145deg, #f6ede3 0%, #fcf6ef 100%);
+            font-family: var(--font-main);
+            color: #2e2a27;
+            padding: 1rem;
             min-height: 100vh;
-            padding: 2rem 1.5rem;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* main content card – gives a soft, modern container */
-        .page-card {
-            max-width: 1300px;
+        .bakery-kenya {
+            max-width: 1400px;
             width: 100%;
-            background: rgba(255, 255, 255, 0.75);
-            backdrop-filter: blur(2px);
-            border-radius: 2.5rem;
-            padding: 2.5rem 2rem;
-            box-shadow: 0 20px 40px -10px rgba(18, 52, 77, 0.2);
+            background: rgba(255, 251, 245, 0.9);
+            backdrop-filter: blur(5px);
+            border-radius: 3.5rem 3.5rem 2.5rem 2.5rem;
+            box-shadow: 0 30px 50px -20px #7b5f4b, 0 2px 0 2px #fff4e6 inset;
+            padding: 2rem 2rem 2.2rem;
+            border: 1px solid #ffeede;
         }
 
-        /* ----- TYPOGRAPHY & HEADINGS ----- */
+        /* header with sheng/local flair */
+        .header-sheng {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.8rem;
+        }
+
         h1 {
-            color: #1a2e3f;
-            font-size: 3rem;
-            font-weight: 700;
+            font-size: 3.2rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4f3a2b, #b45f3a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             letter-spacing: -0.02em;
-            text-align: center;
-            margin-bottom: 0.25rem;
-            text-shadow: 2px 2px 0 rgba(255,255,255,0.6);
+            filter: drop-shadow(2px 2px 0 #f7d9bc);
         }
 
-        h2 {
-            color: #2c4c6b;
-            font-size: 2rem;
-            font-weight: 500;
-            text-align: center;
-            margin-top: 0.25rem;
-            margin-bottom: 0.5rem;
-            border-bottom: 2px dashed #9bb7d4;
-            display: inline-block;
-            padding-bottom: 0.3rem;
-        }
-
-        .header-row {
-            text-align: center;
-            margin-bottom: 1.5rem;
-        }
-
-        h3 {
-            color: #3d5f7a;
-            font-size: 1.6rem;
-            font-weight: 400;
-            background: rgba(255,255,240,0.6);
-            display: inline-block;
-            padding: 0.2rem 2rem;
-            border-radius: 40px;
-            backdrop-filter: blur(2px);
-            margin: 0.5rem 0;
-        }
-
-        h5 {
-            color: #4f6f8a;
-            font-size: 1.4rem;
-            font-weight: 400;
-            text-align: center;
-            margin-top: 0.5rem;
-            margin-bottom: 2rem;
-        }
-
-        /* ----- PARAGRAPH (contact note) ----- */
-        .contact-note {
-            background: #ffffffd9;
-            backdrop-filter: blur(4px);
-            color: #1c3b4f;
-            font-weight: 500;
-            font-size: 1.2rem;
-            padding: 1rem 2rem;
+        .badge-kenya {
+            background: #1e3f3a;
+            color: #fbf3d9;
+            padding: 0.7rem 2rem;
             border-radius: 60px;
-            max-width: 700px;
-            margin: 2rem auto 2rem auto;
-            text-align: center;
-            box-shadow: 0 6px 14px rgba(43, 86, 120, 0.15);
-            border: 1px solid white;
-        }
-
-        .contact-note strong {
-            color: #c44536;
-            background: #fff1e6;
-            padding: 0.2rem 0.8rem;
-            border-radius: 30px;
             font-weight: 700;
-            margin-left: 0.5rem;
-            white-space: nowrap;
-        }
-
-        /* ----- TABLE – clean, modern, readable ----- */
-        .table-wrapper {
-            overflow-x: auto;
-            margin: 2.5rem 0 1.5rem 0;
-            border-radius: 24px;
-            background: white;
-            box-shadow: 0 12px 28px -8px rgba(28, 52, 84, 0.2);
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 1.1rem;
-            min-width: 550px;
-        }
-
-        th {
-            background: #1e3b4f;
-            color: white;
-            font-weight: 600;
             font-size: 1.2rem;
-            padding: 1.2rem 1rem;
-            text-align: left;
-            letter-spacing: 0.3px;
+            border: 2px solid #e9b13b;
+            box-shadow: 0 5px 0 #0f2c26;
         }
 
-        td {
-            padding: 1rem 1rem;
-            border-bottom: 1px solid #d3e2ed;
-            color: #1b3442;
-            font-weight: 400;
-            background-color: #ffffff;
+        /* process section – local inspiration */
+        .process-showcase {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 2rem 0 2.5rem;
         }
 
-        tr:last-child td {
-            border-bottom: none;
+        .process-card {
+            background: white;
+            flex: 1 1 170px;
+            border-radius: 2rem 2rem 1.5rem 1.5rem;
+            padding: 1.8rem 0.8rem;
+            text-align: center;
+            box-shadow: 0 16px 25px -12px #ac8f79;
+            border: 1px solid #f5ddcd;
+            transition: 0.2s;
         }
 
-        tr:hover td {
-            background: #ecf3f9;
-            transition: background 0.2s;
+        .process-card:hover {
+            transform: translateY(-5px);
+            background: #fff9f2;
         }
 
-        /* ----- LAYOUT: form + image side by side (robust) ----- */
-        .split-panel {
+        .process-icon {
+            font-size: 3.8rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .process-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4a2f1f;
+        }
+
+        .process-card p {
+            color: #6d5848;
+            font-size: 0.95rem;
+            padding: 0 0.3rem;
+        }
+
+        /* gallery – Kenyan prices (KES) */
+        .gallery-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: #2c3a2b;
+            border-left: 12px solid #bb5b36;
+            padding-left: 1.5rem;
+            margin: 2.5rem 0 1.8rem;
+        }
+
+        .cake-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 2rem;
+        }
+
+        .cake-item {
+            background: #ffffff;
+            border-radius: 2.5rem;
+            overflow: hidden;
+            box-shadow: 0 16px 28px -16px #896b56;
+            border: 1px solid #ffefe1;
+            transition: 0.2s;
+        }
+
+        .cake-item:hover {
+            box-shadow: 0 24px 36px -18px #6f4f3b;
+        }
+
+        .cake-img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            border-bottom: 5px solid #f5c9aa;
+        }
+
+        .cake-info {
+            padding: 1.5rem 1.3rem 2rem;
+        }
+
+        .cake-info h4 {
+            font-size: 1.9rem;
+            font-weight: 700;
+            color: #2b3a2b;
+        }
+
+        .price-ksh {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #b45f2e;
+            margin: 0.3rem 0 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .price-ksh small {
+            font-size: 1rem;
+            font-weight: 500;
+            color: #5b4d42;
+        }
+
+        .btn-order {
+            background: #1f4b3b;
+            border: none;
+            color: #fef6e0;
+            font-weight: 700;
+            padding: 0.9rem 2rem;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            cursor: pointer;
+            box-shadow: 0 6px 0 #0e2f23;
+            transition: 0.1s;
+            border: 1px solid #dbaa7b;
+            width: fit-content;
+        }
+
+        .btn-order:hover {
+            background: #2f6450;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 0 #0e2f23;
+        }
+
+        /* selling point – local vibe */
+        .kenya-deal {
+            background: #ebd9cc;
+            border-radius: 5rem 5rem 3rem 3rem;
+            padding: 2rem 2.5rem;
+            margin: 3rem 0 1.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #fbead9, #f7d5bb);
+            border: 2px solid #fffcf0;
+        }
+
+        .deal-text h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #5b3f2a;
+        }
+
+        .deal-text p {
+            font-size: 1.3rem;
+            color: #4a4a3b;
+            max-width: 500px;
+        }
+
+        .today-kenya {
+            background: #1d453c;
+            color: #fcefd1;
+            border-radius: 60px;
+            padding: 1.3rem 2.5rem;
+            font-size: 1.9rem;
+            font-weight: 700;
+            box-shadow: 0 7px 0 #0b2922;
+        }
+
+        /* main order panel + m-pesa / local flavour */
+        .order-panel {
             display: flex;
             flex-wrap: wrap;
             gap: 2rem;
-            margin-top: 3rem;
-            align-items: stretch;
+            margin: 3rem 0 2rem;
         }
 
-        .form-card {
-            flex: 1 1 380px;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(6px);
-            border-radius: 32px;
-            padding: 2rem 2rem 2.5rem 2rem;
-            box-shadow: 0 20px 30px -8px #1f3b4d33;
-            border: 2px solid rgba(255,255,255,0.7);
+        .inquiry-form {
+            flex: 2 1 430px;
+            background: #fffaf3;
+            border-radius: 3rem;
+            padding: 2.3rem 2.2rem;
+            border: 2px solid #fce3d2;
+            box-shadow: 0 18px 30px -15px #a18068;
         }
 
-        .form-card h3 {
-            margin-top: 0;
-            margin-bottom: 1.5rem;
-            background: none;
-            padding-left: 0;
-            color: #123146;
-            font-weight: 600;
-        }
-
-        label {
-            font-weight: 600;
-            color: #0c2a3b;
-            display: block;
-            margin-top: 1.2rem;
-            margin-bottom: 0.2rem;
-            font-size: 1rem;
-            letter-spacing: 0.3px;
-        }
-
-        input[type="text"],
-        input[type="email"] {
-            width: 100%;
-            padding: 1rem 1.2rem;
-            border: 2px solid #cbdbe9;
-            border-radius: 24px;
-            font-size: 1rem;
-            background: white;
-            transition: all 0.2s;
-            outline: none;
-            color: #0a2535;
-        }
-
-        input[type="text"]:focus,
-        input[type="email"]:focus {
-            border-color: #347a9e;
-            box-shadow: 0 0 0 5px rgba(52, 122, 158, 0.15);
-        }
-
-        .submit-btn {
-            background: #1d4f6e;
-            color: white;
-            border: none;
-            width: 100%;
-            padding: 1rem 1.5rem;
-            margin-top: 2rem;
-            border-radius: 40px;
+        .inquiry-form h3 {
+            font-size: 2.2rem;
             font-weight: 700;
-            font-size: 1.3rem;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: 0.15s;
-            box-shadow: 0 8px 16px -6px #0b2b3b;
-            border: 1px solid #4895c9;
-        }
-
-        .submit-btn:hover {
-            background: #286b8f;
-            transform: scale(1.02);
-            box-shadow: 0 10px 22px -6px #1e4f69;
-        }
-
-        /* image side */
-        .image-box {
-            flex: 1 1 360px;
-            background: #f2fafd;
-            border-radius: 36px;
+            color: #2c4a3c;
+            margin-bottom: 1.2rem;
             display: flex;
             align-items: center;
-            justify-content: center;
-            padding: 1.5rem;
-            box-shadow: 0 20px 30px -8px #2f557030;
-            border: 2px solid rgba(255,255,255,0.8);
+            gap: 0.6rem;
         }
 
-        .image-box img {
+        .form-row {
+            margin-bottom: 1.3rem;
+        }
+
+        .form-row label {
+            font-weight: 600;
+            color: #4b392b;
+            display: block;
+            margin-bottom: 0.3rem;
+            font-size: 1.15rem;
+        }
+
+        .form-row input, .form-row select, .form-row textarea {
             width: 100%;
-            height: auto;
-            max-height: 400px;
-            object-fit: cover;
-            border-radius: 28px;
-            box-shadow: 0 18px 26px -8px #14394e;
-            transition: 0.3s;
-            border: 3px solid white;
+            padding: 1rem 1.4rem;
+            border: 2px solid #e7cfbc;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            background: #fffdf9;
         }
 
-        .image-box img:hover {
-            transform: scale(1.01);
-            filter: brightness(1.02);
+        .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+            border-color: #bb7842;
+            outline: none;
+            box-shadow: 0 0 0 5px #f5decb;
         }
 
-        /* extra feature: simple rating snippet */
-        .review-strip {
-            margin: 2rem 0 0.5rem 0;
-            background: #ffffffc2;
-            border-radius: 60px;
-            padding: 0.8rem 2rem;
+        .form-row textarea {
+            border-radius: 30px;
+            resize: vertical;
+        }
+
+        .mpesa-row {
+            background: #eef3e3;
+            border-radius: 40px;
+            padding: 0.8rem 1.5rem;
             display: flex;
             flex-wrap: wrap;
             align-items: center;
-            justify-content: center;
-            gap: 1rem;
-            font-size: 1.2rem;
-            border: 1px solid white;
+            justify-content: space-between;
+            margin: 1.2rem 0;
+            font-size: 1.15rem;
         }
 
-        .stars {
-            color: #eab308;
+        .mpesa-row span {
+            background: #0f432f;
+            color: #fcf3d7;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-weight: 700;
+        }
+
+        .order-btn {
+            background: #d1522a;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 1.3rem;
             font-size: 1.8rem;
-            line-height: 1;
-            letter-spacing: 5px;
+            font-weight: 800;
+            border-radius: 60px;
+            box-shadow: 0 8px 0 #7f3820;
+            cursor: pointer;
+            transition: 0.1s;
+            letter-spacing: 0.3px;
         }
 
-        .review-text {
-            color: #174259;
-            font-weight: 500;
+        .order-btn:hover {
+            background: #b74521;
+            transform: translateY(3px);
+            box-shadow: 0 5px 0 #7f3820;
         }
 
-        /* fine tune responsiveness */
-        @media (max-width: 700px) {
-            body { padding: 1rem; }
-            .page-card { padding: 1.5rem; }
-            h1 { font-size: 2.2rem; }
-            .contact-note { font-size: 1rem; }
+        .featured-image {
+            flex: 1 1 300px;
+            background: #cba987;
+            border-radius: 3.5rem;
+            padding: 1.8rem;
+            box-shadow: 0 25px 30px -16px #7b5a44;
+            border: 4px solid white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: auto;
+            max-height: 320px;
+            object-fit: cover;
+            border-radius: 2.2rem;
+            border: 4px solid white;
+        }
+
+        .featured-image p {
+            background: #1e3f33;
+            color: #f3ead1;
+            padding: 0.6rem 2rem;
+            border-radius: 60px;
+            font-weight: 600;
+            margin-top: 1rem;
+            font-size: 1.15rem;
+        }
+
+        /* trust badges – localised */
+        .trust-badge {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.2rem 2.5rem;
+            background: #ecd7c2;
+            padding: 1.3rem 2rem;
+            border-radius: 70px;
+            margin: 2.5rem 0 1.8rem;
+            border: 1px solid #ffe7d4;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #2b3b2b;
+        }
+
+        .trust-item span {
+            font-size: 2rem;
+        }
+
+        /* why choose us – ingredients */
+        .ingredients-row {
+            display: flex;
+            gap: 0.7rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 2.2rem 0 0.8rem;
+        }
+
+        .pill {
+            background: #f2e1d2;
+            padding: 0.7rem 1.8rem;
+            border-radius: 60px;
+            font-weight: 600;
+            color: #2e3f2e;
+            font-size: 1.1rem;
+            border: 1px solid white;
+            box-shadow: 0 4px 0 #c9b09b;
+        }
+
+        /* footer */
+        .footer-note {
+            margin-top: 3.5rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            color: #7a604b;
+            border-top: 2px dashed #dbb89b;
+            padding-top: 1.8rem;
+            font-size: 1.1rem;
+        }
+
+        .social span {
+            font-size: 2rem;
+            margin-left: 0.8rem;
+            cursor: default;
+        }
+
+        /* mobile */
+        @media (max-width: 600px) {
+            h1 { font-size: 2.4rem; }
+            .badge-kenya { font-size: 1rem; }
+            .deal-text h2 { font-size: 1.9rem; }
+            .today-kenya { font-size: 1.3rem; padding: 1rem 1.5rem; }
         }
     </style>
 </head>
 <body>
-    <div class="page-card">
-        <!-- header section with better hierarchy -->
-        <div class="header-row">
-            <h1>🍰 FreshBites • online clip</h1>
-            <h2>Hello World !!!</h2>
-            <h3>since 2012</h3>
+    <div class="bakery-kenya">
+        <!-- header with local flavour -->
+        <div class="header-sheng">
+            <h1>🍰 FreshBites • 254</h1>
+            <span class="badge-kenya">🇰🇪 tuko pamoja · since 2012</span>
         </div>
 
-        <!-- small review / rating element (makes page robust) -->
-        <div class="review-strip">
-            <span class="stars">★★★★★</span>
-            <span class="review-text">1,200+ happy reviews &nbsp; | &nbsp; “best cakes in town”</span>
+        <!-- How we make / process (story) -->
+        <div class="process-showcase">
+            <div class="process-card">
+                <div class="process-icon">🌾</div>
+                <h3>unga</h3>
+                <p>local organic flour from Eldoret, sifted by hand</p>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">🥚</div>
+                <h3>mayai</h3>
+                <p>free-range eggs from Kiambu — fresh daily</p>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">🔥</div>
+                <h3>kuoka</h3>
+                <p>baked in stone hearth, that golden-brown vibe</p>
+            </div>
+            <div class="process-card">
+                <div class="process-icon">✋</div>
+                <h3>deco</h3>
+                <p>hand-iced with Belgian chocolate & local fruit</p>
+            </div>
         </div>
 
-        <!-- improved table with modern wrapper & updated sample data -->
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>School / institution</th>
-                        <th>Contact</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr><td>Wanyama</td><td>KU (Kenyatta University)</td><td>0799 786 986</td></tr>
-                    <tr><td>John M.</td><td>Harvard University</td><td>0799 786 987</td></tr>
-                    <tr><td>Emily Rose</td><td>Oxford College</td><td>0799 786 988</td></tr>
-                    <tr><td>Linda A.</td><td>Strathmore</td><td>0745 123 456</td></tr>
-                </tbody>
-            </table>
+        <!-- CAKE GALLERY – KENYAN PRICES (KES) -->
+        <div class="gallery-title">🍰 leo's specials — bei ya kenya</div>
+        <div class="cake-grid">
+            <!-- item 1 -->
+            <div class="cake-item">
+                <img class="cake-img" src="https://images.pexels.com/photos/15799209/pexels-photo-15799209.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="chocolate cake" loading="lazy">
+                <div class="cake-info">
+                    <h4>midnight truffle</h4>
+                    <div class="price-ksh">KSh 3,850 <small>(whole)</small></div>
+                    <button class="btn-order" onclick="alert('Asante! we’ll confirm via WhatsApp')">order now</button>
+                </div>
+            </div>
+            <!-- item 2 -->
+            <div class="cake-item">
+                <img class="cake-img" src="https://images.pexels.com/photos/14773240/pexels-photo-14773240.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="cupcakes" loading="lazy">
+                <div class="cake-info">
+                    <h4>berry velvet cupcakes</h4>
+                    <div class="price-ksh">KSh 2,400 <small>dozen</small></div>
+                    <button class="btn-order" onclick="alert('Tutawasiliana nawe ASAP')">order now</button>
+                </div>
+            </div>
+            <!-- item 3 -->
+            <div class="cake-item">
+                <img class="cake-img" src="https://images.pexels.com/photos/18580287/pexels-photo-18580287.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="salted caramel cake" loading="lazy">
+                <div class="cake-info">
+                    <h4>salted caramel drip</h4>
+                    <div class="price-ksh">KSh 4,200 <small>8 inches</small></div>
+                    <button class="btn-order" onclick="alert('Ndugu, order imepokelewa')">order now</button>
+                </div>
+            </div>
+            <!-- item 4 -->
+            <div class="cake-item">
+                <img class="cake-img" src="https://images.pexels.com/photos/5386679/pexels-photo-5386679.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="mini party set" loading="lazy">
+                <div class="cake-info">
+                    <h4>mini party set (6pcs)</h4>
+                    <div class="price-ksh">KSh 2,890 <small>assorted</small></div>
+                    <button class="btn-order" onclick="alert('Asante! order imewekwa')">order now</button>
+                </div>
+            </div>
+            <!-- extra 5th – new -->
+            <div class="cake-item">
+                <img class="cake-img" src="https://images.pexels.com/photos/1908192/pexels-photo-1908192.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="black forest cake" loading="lazy">
+                <div class="cake-info">
+                    <h4>black forest</h4>
+                    <div class="price-ksh">KSh 3,750 <small>fresh cherries</small></div>
+                    <button class="btn-order" onclick="alert('tuta contact soon')">order now</button>
+                </div>
+            </div>
+            <!-- item 6 -->
+            <div class="cake-item">
+                <img class="cake-img" src="https://images.pexels.com/photos/1120464/pexels-photo-1120464.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop" alt="red velvet" loading="lazy">
+                <div class="cake-info">
+                    <h4>red velvet (6'')</h4>
+                    <div class="price-ksh">KSh 3,250 <small>cream cheese</small></div>
+                    <button class="btn-order" onclick="alert('sawa, tutakujibu')">order now</button>
+                </div>
+            </div>
         </div>
 
-        <!-- contact paragraph with clear CTA and updated number -->
-        <div class="contact-note">
-            📞 hello there! Anyone with any pending question feel free to contact me: 
-            <strong>0714 477 914</strong> (also WhatsApp)
+        <!-- selling point – kenyan style -->
+        <div class="kenya-deal">
+            <div class="deal-text">
+                <h2>🍩 maamuzi maalum</h2>
+                <p>wedding cakes · birthday numbers · gluten-free · vegan · just tell us</p>
+            </div>
+            <div class="today-kenya">
+                ⚡ 10% off first order
+            </div>
         </div>
 
-        <!-- TWO COLUMN LAYOUT: FORM + IMAGE (robust and balanced) -->
-        <div class="split-panel">
-            <!-- left side: form styled beautifully -->
-            <div class="form-card">
-                <h3>✏️ quick message</h3>
+        <!-- ORDER / INQUIRY + MPESA (professional) -->
+        <div class="order-panel">
+            <div class="inquiry-form">
+                <h3>📝 weka order yako</h3>
                 <form action="#" method="post">
-                    <label for="name">Your name</label>
-                    <input type="text" id="name" name="name" placeholder="e.g. Wanyama" required>
+                    <div class="form-row">
+                        <label for="name">jina lako</label>
+                        <input type="text" id="name" name="name" placeholder="e.g. Wanyama" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">email / namba ya simu</label>
+                        <input type="email" id="email" name="email" placeholder="+254 7XX XXX XXX" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="cake-type">unataka aina gani?</label>
+                        <select id="cake-type" name="cake-type">
+                            <option>birthday / siku ya kuzaliwa</option>
+                            <option>wedding / harusi</option>
+                            <option>cupcakes (kikapu)</option>
+                            <option>custom / nyingine</option>
+                        </select>
+                    </div>
+                    <div class="form-row">
+                        <label for="message">flavour / maombi maalum</label>
+                        <textarea id="message" name="message" rows="2" placeholder="e.g. chocolate, vanilla, strawberry, dairy-free..."></textarea>
+                    </div>
 
-                    <label for="email">Email address</label>
-                    <input type="email" id="email" name="email" placeholder="hello@domain.com" required>
+                    <!-- m-pesa local info (robust) -->
+                    <div class="mpesa-row">
+                        <span>💳 Lipa na M‑PESA</span> <span>till: 527 8910</span>
+                    </div>
 
-                    <!-- extra field for robustness: subject (simple text) -->
-                    <label for="subject">Subject (optional)</label>
-                    <input type="text" id="subject" name="subject" placeholder="cake inquiry ...">
-
-                    <button type="submit" class="submit-btn">📨 Send message</button>
+                    <button type="submit" class="order-btn">💰 omba bei / order</button>
                 </form>
-                <p style="margin-top: 1.2rem; font-size: 0.95rem; color: #2b4f69; opacity: 0.8; text-align: center;">
-                    we reply within 2 hours
+                <!-- phone contact (kenyan) -->
+                <p style="margin-top: 1.5rem; font-size: 1.25rem; background: #faeede; padding: 0.5rem 1rem; border-radius: 60px;">
+                    📞 <strong>0714 477 914</strong> (WhatsApp / simu)
                 </p>
             </div>
-
-            <!-- right side: image (original image placeholder updated with realistic cupcakes) -->
-            <div class="image-box">
-                <!-- note: using placeholder image from unsplash + my cakes theme (robust fallback) -->
-                <img src="https://images.pexels.com/photos/913136/pexels-photo-913136.jpeg?auto=compress&cs=tinysrgb&w=600" 
-                     alt="Freshly baked cakes and cupcakes" 
-                     style="width:100%; height:auto; object-fit:cover;">
-                <!-- fallback: if image fails, alt shows description. but it's a robust CDN -->
+            <div class="featured-image">
+                <img src="https://images.pexels.com/photos/5760816/pexels-photo-5760816.jpeg?auto=compress&cs=tinysrgb&w=600" alt="baker kenya">
+                <p>👩🏿‍🍳 mama nene — kuoka kwa upendo</p>
             </div>
         </div>
 
-        <!-- subtle extra section: "why choose us" - makes page fuller and updated -->
-        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 3rem;">
-            <span style="background: #eaf2f9; padding: 0.7rem 2rem; border-radius: 40px; font-weight: 500;">🥚 fresh ingredients</span>
-            <span style="background: #eaf2f9; padding: 0.7rem 2rem; border-radius: 40px; font-weight: 500;">🚚 free delivery</span>
-            <span style="background: #eaf2f9; padding: 0.7rem 2rem; border-radius: 40px; font-weight: 500;">🎂 custom orders</span>
-            <span style="background: #eaf2f9; padding: 0.7rem 2rem; border-radius: 40px; font-weight: 500;">✨ 5-star service</span>
+        <!-- trust badges (local) -->
+        <div class="trust-badge">
+            <div class="trust-item"><span>⭐</span> 1,200+ reviews (Google)</div>
+            <div class="trust-item"><span>✅</span> KEBS certified</div>
+            <div class="trust-item"><span>🌱</span> organic options</div>
+            <div class="trust-item"><span>⚡</span> 2hr delivery CBD</div>
         </div>
 
-        <!-- small footer note for copyright / update -->
-        <div style="text-align: center; margin-top: 3rem; color: #3a6c8b; border-top: 1px dashed #a0c2d8; padding-top: 1.5rem; font-size: 0.95rem;">
-            © 2025 FreshBites Online Clip — all rights reserved • <span style="font-weight:600;">fully updated page</span>
+        <!-- why choose us – with local ingredients -->
+        <div class="ingredients-row">
+            <span class="pill">🥚 mayai ya kienyeji</span>
+            <span class="pill">🍫 belgian chocolate</span>
+            <span class="pill">🧈 unsalted butter (Anchor)</span>
+            <span class="pill">🍓 fresh strawberries (Nanyuki)</span>
+            <span class="pill">🌾 unga wa ngano (Eldoret)</span>
+        </div>
+
+        <!-- footer -->
+        <div class="footer-note">
+            <div>© 2026 FreshBites Kenya · karibu tena</div>
+            <div class="social">
+                <span>📘</span><span>📸</span><span>🐦</span><span>▶️</span>
+            </div>
+        </div>
+
+        <!-- extra local text for robust -->
+        <div style="text-align: center; margin-top: 1.2rem; color: #836b58; font-style: italic; font-size: 1.1rem;">
+            🍰 “tunatengeneza kwa upendo — kila keki ni hadithi”
         </div>
     </div>
-
-    <!-- no extra style tags: everything merged into one consistent design -->
 </body>
 </html>
-```
